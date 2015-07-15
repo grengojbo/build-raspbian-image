@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 machine=`uname -m`
 if [ "${machine}" != "armv7l" ]; then
@@ -6,9 +6,8 @@ if [ "${machine}" != "armv7l" ]; then
   exit 1
 fi
 
-echo "Please check environment variables etc, this script can be executed ONLY within RPI environment!"
-echo "When tasks done, type \"exit\" to return"
+echo "Now preparing the Poppy environment"
 echo ""
 
-bash
-
+chmod +x poppy-installer
+su pi -c "./poppy-installer $@"

@@ -1,0 +1,5 @@
+dependencies:
+  pre:
+    - sudo bash install.sh
+    - sed -i -e '/bash/d' delivery/install.sh
+    - sudo bash raspbian/build_raspbian_sd_card.sh
